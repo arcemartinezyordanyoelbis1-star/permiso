@@ -1,0 +1,6 @@
+{
+  "name": "Solicitud de Permiso Municipal - San Pedro del Norte",
+  "description": "Sistema oficial en línea de solicitud y gestión de permisos laborales para trabajadores y Talento Humano de la Alcaldía de San Pedro del Norte con generación de comprobante PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
