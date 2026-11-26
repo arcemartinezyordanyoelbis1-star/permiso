@@ -385,7 +385,10 @@ app.get('/api/health', (_req, res) => {
 });
 
 app.get('/api/sitio', (_req, res) => {
-  res.json({ sitio: db.sitio, categorias: CATEGORIAS });
+  // Se publican los datos institucionales tambien en la raiz (acceso directo:
+  // /api/sitio -> nombre, lema, alcalde, ...) manteniendo el objeto "sitio"
+  // anidado que consume el portal y el panel de administracion.
+  res.json({ ...db.sitio, sitio: db.sitio, categorias: CATEGORIAS });
 });
 
 app.get('/api/noticias', (req, res) => {
