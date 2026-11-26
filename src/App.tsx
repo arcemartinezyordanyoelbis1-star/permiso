@@ -57,7 +57,7 @@ const App: React.FC = () => {
 
   let contenido: React.ReactNode;
   if (ruta === '/') {
-    contenido = <PortalHome />;
+    contenido = <PortalHome sitio={sitio} />;
   } else if (segmentos[0] === 'noticias' && segmentos.length === 1) {
     contenido = <PortalNoticias />;
   } else if (segmentos[0] === 'noticias' && segmentos[1]) {
@@ -68,7 +68,11 @@ const App: React.FC = () => {
     contenido = <NoEncontrada />;
   }
 
-  return <PortalLayout sitio={sitio}>{contenido}</PortalLayout>;
+  return (
+    <PortalLayout ruta={ruta} sitio={sitio}>
+      {contenido}
+    </PortalLayout>
+  );
 };
 
 export default App;
